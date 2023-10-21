@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<robot  name="overpass" >
+ <link  name="top_surface" >
+  <visual >
+   <origin  xyz="0 0 1" />
+   <geometry >
+    <box  size="2 1 0.1" />
+   </geometry>
+  </visual>
+  <collision >
+   <origin  xyz="0 0 1" />
+   <geometry >
+    <box  size="2 1 0.1" />
+   </geometry>
+  </collision>
+ </link>
+ <link  name="leg1" >
+  <visual >
+   <origin  xyz="0 0 0" />
+   <geometry >
+    <box  size="0.4 1 0.95" />
+   </geometry>
+  </visual>
+  <collision >
+   <origin  xyz="0 0 0" />
+   <geometry >
+    <box  size="0.4 1 0.95" />
+   </geometry>
+  </collision>
+ </link>
+ <link  name="leg2" >
+  <visual >
+   <origin  xyz="0 0 0" />
+   <geometry >
+    <box  size="0.4 1 0.95" />
+   </geometry>
+  </visual>
+  <collision >
+   <origin  xyz="0 0 0" />
+   <geometry >
+    <box  size="0.4 1 0.95" />
+   </geometry>
+  </collision>
+ </link>
+ <joint  type="fixed"  name="side1" >
+  <origin  xyz="0.8 0 0.475"  rpy="0 0 0" />
+  <parent  link="top_surface" />
+  <child  link="leg1" />
+ </joint>
+ <joint  type="fixed"  name="side2" >
+  <origin  xyz="-0.8 0 0.475"  rpy="0 0 0" />
+  <parent  link="top_surface" />
+  <child  link="leg2" />
+ </joint>
+</robot>
